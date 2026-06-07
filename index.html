@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pharma Reports Pro - Complete System</title>
+  <title>Vanguard IHL - Pharma Reports Pro</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
   <style>
@@ -44,9 +44,48 @@
       gap: 20px;
     }
 
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-right: 2px solid #ddd;
+      padding-right: 20px;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      background: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 5px;
+    }
+
+    .company-info h1 {
+      color: #10B981;
+      font-size: 24px;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .company-info p {
+      color: #666;
+      font-size: 12px;
+      margin: 2px 0 0 0;
+    }
+
     h1 {
       color: #333;
-      font-size: 28px;
+      font-size: 24px;
     }
 
     .user-info {
@@ -279,7 +318,7 @@
     .stat-number {
       font-size: 32px;
       font-weight: bold;
-      color: #667eea;
+      color: #10B981;
     }
 
     .stat-label {
@@ -329,17 +368,17 @@
       object-fit: cover;
       border-radius: 8px;
       margin-bottom: 15px;
-      border: 3px solid #667eea;
+      border: 3px solid #10B981;
     }
 
     .card-header {
-      border-bottom: 3px solid #667eea;
+      border-bottom: 3px solid #10B981;
       padding-bottom: 12px;
       margin-bottom: 15px;
     }
 
     .card h2 {
-      color: #0A66C2;
+      color: #10B981;
       font-size: 20px;
       margin: 0;
     }
@@ -355,7 +394,7 @@
       padding: 10px;
       background: #f8f9fa;
       border-radius: 6px;
-      border-left: 3px solid #667eea;
+      border-left: 3px solid #10B981;
     }
 
     .field-label {
@@ -379,13 +418,13 @@
     }
 
     .card-table th {
-      background: #eef6ff;
+      background: #e8f5e9;
       padding: 10px;
       text-align: left;
       font-size: 12px;
       font-weight: 600;
-      color: #0A66C2;
-      border-bottom: 2px solid #667eea;
+      color: #10B981;
+      border-bottom: 2px solid #10B981;
     }
 
     .card-table td {
@@ -436,7 +475,7 @@
     }
 
     .users-table th {
-      background: #667eea;
+      background: #10B981;
       color: white;
       padding: 15px;
       text-align: left;
@@ -479,14 +518,39 @@
       background: white;
       padding: 30px;
       border-radius: 10px;
-      max-width: 400px;
+      max-width: 500px;
       margin: 50px auto;
       box-shadow: 0 10px 40px rgba(0,0,0,0.2);
       text-align: center;
     }
 
+    .login-logo {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      background: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .login-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 10px;
+    }
+
     .login-section h2 {
-      color: #333;
+      color: #10B981;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .login-section p {
+      color: #666;
       margin-bottom: 20px;
     }
 
@@ -503,6 +567,14 @@
     }
 
     @media (max-width: 768px) {
+      .logo-section {
+        border-right: none;
+        border-bottom: 2px solid #ddd;
+        padding-right: 0;
+        padding-bottom: 15px;
+        width: 100%;
+      }
+
       .search-row {
         grid-template-columns: 1fr;
       }
@@ -518,16 +590,35 @@
       .dashboard-grid {
         grid-template-columns: 1fr;
       }
+      .header-left {
+        flex-direction: column;
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <!-- Login Modal -->
   <div id="loginModal" class="modal show">
-    <div class="modal-content" style="max-width: 400px; margin-top: 50px;">
+    <div class="modal-content" style="max-width: 500px; margin-top: 20px;">
       <div class="login-section">
-        <h2>🔐 Pharma Reports Pro</h2>
-        <p style="color:#666; margin-bottom:20px;">Multi-user System</p>
+        <div class="login-logo">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Logo SVG -->
+            <rect width="200" height="200" fill="white" rx="10"/>
+            <!-- Vanguard V -->
+            <path d="M 60 40 L 80 100 L 100 40 L 120 100 L 140 40 L 135 55 Q 110 120 100 140 Q 90 120 65 55 Z" fill="#10B981" stroke="#10B981" stroke-width="2"/>
+            <!-- Laboratory flask -->
+            <path d="M 90 145 L 85 165 Q 85 170 90 170 L 110 170 Q 115 170 115 165 L 110 145 Z" fill="#10B981" stroke="#10B981" stroke-width="2"/>
+            <path d="M 85 145 L 115 145 Q 120 145 120 140 L 80 140 Q 80 145 85 145 Z" fill="#10B981" stroke="#10B981" stroke-width="2"/>
+            <!-- Text -->
+            <text x="100" y="190" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#10B981">VANGUARD IHL</text>
+          </svg>
+        </div>
+        
+        <h2>Pharma Reports Pro</h2>
+        <p>VANGUARD INDUSTRIAL HYGIENE LABORATORY</p>
+        <p style="color:#999; margin-bottom:20px;">Multi-user Sampling Report System</p>
         
         <div class="form-group">
           <label>Username</label>
@@ -541,7 +632,7 @@
 
         <small style="color:#999; display:block; margin-bottom:10px;">Demo: admin/admin123 | user/user123</small>
         
-        <button class="btn-submit" onclick="login()">Login</button>
+        <button class="btn-submit" onclick="login()">🔐 Login</button>
       </div>
     </div>
   </div>
@@ -550,7 +641,21 @@
     <!-- Header -->
     <header>
       <div class="header-left">
-        <h1>📊 Pharma Reports Pro</h1>
+        <div class="logo-section">
+          <div class="logo">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="200" fill="white" rx="10"/>
+              <path d="M 60 40 L 80 100 L 100 40 L 120 100 L 140 40 L 135 55 Q 110 120 100 140 Q 90 120 65 55 Z" fill="#10B981" stroke="#10B981" stroke-width="2"/>
+              <path d="M 90 145 L 85 165 Q 85 170 90 170 L 110 170 Q 115 170 115 165 L 110 145 Z" fill="#10B981" stroke="#10B981" stroke-width="2"/>
+              <path d="M 85 145 L 115 145 Q 120 145 120 140 L 80 140 Q 80 145 85 145 Z" fill="#10B981" stroke="#10B981" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="company-info">
+            <h1>VANGUARD IHL</h1>
+            <p>Industrial Hygiene Laboratory</p>
+          </div>
+        </div>
+
         <div class="user-info">
           👤 <strong id="currentUserDisplay"></strong> <span id="currentRoleDisplay"></span>
         </div>
@@ -654,17 +759,17 @@
   <div id="adminPanelModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('adminPanelModal')">&times;</span>
-      <h2>➕ Add New Sampling Report</h2>
+      <h2>➕ Add New Sampling Report - VANGUARD IHL</h2>
       <form id="reportForm" onsubmit="saveReport(event)">
         
-        <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #667eea; padding-bottom:10px;">📷 Photo Upload</h3>
+        <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #10B981; padding-bottom:10px;">📷 Photo Upload</h3>
         <div class="form-group">
           <label>📸 Upload Report Photo</label>
           <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto()">
           <img id="photoPreview" style="max-width:100%; margin-top:10px; display:none; border-radius:8px;">
         </div>
 
-        <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #667eea; padding-bottom:10px;">📋 Basic Information</h3>
+        <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #10B981; padding-bottom:10px;">📋 Basic Information</h3>
         <div class="form-row">
           <div class="form-group">
             <label>Company Name *</label>
@@ -687,7 +792,7 @@
           </div>
         </div>
 
-        <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #667eea; padding-bottom:10px;">🔧 Equipment & Details</h3>
+        <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #10B981; padding-bottom:10px;">🔧 Equipment & Details</h3>
         <div class="form-row">
           <div class="form-group">
             <label>Equipment</label>
@@ -710,7 +815,7 @@
           </div>
         </div>
 
-        <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #667eea; padding-bottom:10px;">🌡️ Environmental Parameters</h3>
+        <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #10B981; padding-bottom:10px;">🌡️ Environmental Parameters</h3>
         <div class="form-row">
           <div class="form-group">
             <label>Temperature Range</label>
@@ -949,8 +1054,8 @@
           datasets: [{
             label: 'Reports Added',
             data: [5, 8, 12, 10, 15],
-            borderColor: '#667eea',
-            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+            borderColor: '#10B981',
+            backgroundColor: 'rgba(16, 185, 129, 0.1)',
             tension: 0.4,
             fill: true
           }]
@@ -974,7 +1079,7 @@
           labels: Object.keys(companyData),
           datasets: [{
             data: Object.values(companyData),
-            backgroundColor: ['#667eea', '#764ba2', '#FF6B6B', '#10B981', '#F59E0B']
+            backgroundColor: ['#10B981', '#F59E0B', '#FF6B6B', '#0A66C2', '#667eea']
           }]
         },
         options: {
@@ -1107,15 +1212,16 @@
       const element = document.createElement('div');
       element.innerHTML = `
         <div style="padding:20px; font-family:Arial;">
-          <h1>${report.company}</h1>
-          <hr>
+          <h1 style="color:#10B981; text-align:center;">VANGUARD IHL - SAMPLING REPORT</h1>
+          <hr style="border:2px solid #10B981;">
+          <p><strong>Company:</strong> ${report.company}</p>
           <p><strong>Location:</strong> ${report.location}</p>
           <p><strong>Document No:</strong> ${report.docNo}</p>
           <p><strong>Date:</strong> ${report.date}</p>
-          ${report.photo ? `<img src="${report.photo}" style="max-width:100%; margin:20px 0;">` : ''}
-          <h2>Details</h2>
+          ${report.photo ? `<img src="${report.photo}" style="max-width:100%; margin:20px 0; border:2px solid #10B981; border-radius:5px;">` : ''}
+          <h2 style="color:#10B981; margin-top:20px;">Details</h2>
           <table style="width:100%; border-collapse:collapse;">
-            <tr style="background:#f0f0f0;"><th style="border:1px solid #ddd; padding:10px; text-align:left;">Parameter</th><th style="border:1px solid #ddd; padding:10px; text-align:left;">Value</th></tr>
+            <tr style="background:#10B981; color:white;"><th style="border:1px solid #ddd; padding:10px; text-align:left;">Parameter</th><th style="border:1px solid #ddd; padding:10px; text-align:left;">Value</th></tr>
             <tr><td style="border:1px solid #ddd; padding:10px;">Equipment</td><td style="border:1px solid #ddd; padding:10px;">${report.equipment || '-'}</td></tr>
             <tr><td style="border:1px solid #ddd; padding:10px;">Room ID</td><td style="border:1px solid #ddd; padding:10px;">${report.room || '-'}</td></tr>
             <tr><td style="border:1px solid #ddd; padding:10px;">Sample Media</td><td style="border:1px solid #ddd; padding:10px;">${report.media || '-'}</td></tr>
@@ -1125,14 +1231,18 @@
             <tr><td style="border:1px solid #ddd; padding:10px;">ACPH</td><td style="border:1px solid #ddd; padding:10px;">${report.acph || '-'}</td></tr>
             <tr><td style="border:1px solid #ddd; padding:10px;">Room Pressure</td><td style="border:1px solid #ddd; padding:10px;">${report.roomPressure || '-'}</td></tr>
           </table>
-          ${report.remarks ? `<h3>Remarks</h3><p>${report.remarks}</p>` : ''}
-          <p style="margin-top:30px; color:#999; font-size:12px;">Created by: ${report.createdBy} on ${report.createdAt}</p>
+          ${report.remarks ? `<h3 style="color:#10B981; margin-top:20px;">Remarks</h3><p>${report.remarks}</p>` : ''}
+          <div style="margin-top:30px; border-top:2px solid #10B981; padding-top:15px; color:#999; font-size:12px;">
+            <p>Created by: <strong>${report.createdBy}</strong></p>
+            <p>Created at: <strong>${report.createdAt}</strong></p>
+            <p style="margin-top:15px; text-align:center; color:#10B981;"><strong>VANGUARD INDUSTRIAL HYGIENE LABORATORY</strong></p>
+          </div>
         </div>
       `;
 
       const opt = {
         margin: 10,
-        filename: `Report_${report.docNo}.pdf`,
+        filename: `VANGUARD_Report_${report.docNo}.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
         jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
@@ -1219,7 +1329,7 @@
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `Reports_${new Date().toISOString().split('T')[0]}.csv`;
+      a.download = `VANGUARD_Reports_${new Date().toISOString().split('T')[0]}.csv`;
       a.click();
     }
 

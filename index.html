@@ -44,6 +44,7 @@
     .nav-buttons {
       display: flex;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -225,6 +226,29 @@
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .card-photo {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border: 3px solid #667eea;
+    }
+
+    .photo-upload-preview {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .photo-preview {
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 8px;
+      margin-top: 10px;
+      border: 2px dashed #667eea;
+      padding: 10px;
     }
 
     .card-header {
@@ -477,6 +501,14 @@
       <h2>➕ Add New Sampling Report</h2>
       <form id="reportForm" onsubmit="saveReport(event)">
         
+        <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #667eea; padding-bottom:10px;">📷 Photo Upload</h3>
+        
+        <div class="form-group photo-upload-preview">
+          <label>📸 Upload Report Photo</label>
+          <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto()">
+          <img id="photoPreview" class="photo-preview" style="display:none;">
+        </div>
+
         <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #667eea; padding-bottom:10px;">📋 Basic Information</h3>
         
         <div class="form-row">
@@ -645,6 +677,20 @@
       showReports();
     });
 
+    // Preview Photo
+    function previewPhoto() {
+      const file = document.getElementById('photoInput').files[0];
+      if(file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const preview = document.getElementById('photoPreview');
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
     // Open Admin Login
     function openAdminLogin() {
       document.getElementById('adminLoginModal').classList.add('show');
@@ -657,6 +703,7 @@
       if(password === ADMIN_PASSWORD) {
         closeModal('adminLoginModal');
         document.getElementById('reportForm').reset();
+        document.getElementById('photoPreview').style.display = 'none';
         document.getElementById('adminPanelModal').classList.add('show');
         document.getElementById('adminPassword').value = '';
       } else {
@@ -669,8 +716,25 @@
     function saveReport(e) {
       e.preventDefault();
       
+      let photoBase64 = null;
+      const photoInput = document.getElementById('photoInput').files[0];
+      
+      if(photoInput) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          photoBase64 = e.target.result;
+          saveReportData(photoBase64);
+        };
+        reader.readAsDataURL(photoInput);
+      } else {
+        saveReportData(null);
+      }
+    }
+
+    function saveReportData(photoBase64) {
       const report = {
         id: Date.now(),
+        photo: photoBase64,
         company: document.getElementById('company').value,
         location: document.getElementById('location').value,
         docNo: document.getElementById('docNo').value,
@@ -706,6 +770,7 @@
 
       alert('✅ Report saved successfully!');
       document.getElementById('reportForm').reset();
+      document.getElementById('photoPreview').style.display = 'none';
       closeModal('adminPanelModal');
       loadReports();
       showReports();
@@ -736,6 +801,8 @@
       reports.forEach(report => {
         html += `
           <div class="card">
+            ${report.photo ? `<img src="${report.photo}" class="card-photo" alt="Report Photo">` : '<div style="height:250px; background:#f0f0f0; border-radius:8px; border:3px solid #ddd; display:flex; align-items:center; justify-content:center; color:#999; margin-bottom:15px;">📷 No Photo</div>'}
+            
             <div class="card-header">
               <h2>${report.company}</h2>
             </div>
@@ -824,7 +891,6 @@
             ${report.remarks ? `<div style="margin-top:15px; padding:10px; background:#fff3cd; border-left:3px solid #ffc107; border-radius:6px;"><strong>📝 Remarks:</strong> ${report.remarks}</div>` : ''}
 
             <div class="card-actions">
-              <button class="btn-small btn-edit" onclick="editReport(${report.id})">✏️ Edit</button>
               <button class="btn-small btn-delete" onclick="deleteReport(${report.id})">🗑️ Delete</button>
             </div>
           </div>

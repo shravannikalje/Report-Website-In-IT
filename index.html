@@ -343,102 +343,6 @@
       align-items: flex-end;
     }
 
-    .reports-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      transition: all 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
-
-    .card-photo {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      border: 3px solid #10B981;
-    }
-
-    .card-header {
-      border-bottom: 3px solid #10B981;
-      padding-bottom: 12px;
-      margin-bottom: 15px;
-    }
-
-    .card h2 {
-      color: #10B981;
-      font-size: 20px;
-      margin: 0;
-    }
-
-    .card-body {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 15px;
-    }
-
-    .field {
-      padding: 10px;
-      background: #f8f9fa;
-      border-radius: 6px;
-      border-left: 3px solid #10B981;
-    }
-
-    .field-label {
-      font-size: 12px;
-      color: #666;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .field-value {
-      font-size: 15px;
-      color: #333;
-      font-weight: 500;
-    }
-
-    .card-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
-
-    .card-table th {
-      background: #e8f5e9;
-      padding: 10px;
-      text-align: left;
-      font-size: 12px;
-      font-weight: 600;
-      color: #10B981;
-      border-bottom: 2px solid #10B981;
-    }
-
-    .card-table td {
-      padding: 10px;
-      border-bottom: 1px solid #eee;
-      font-size: 14px;
-    }
-
-    .card-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 15px;
-    }
-
     .btn-small {
       flex: 1;
       padding: 8px;
@@ -554,15 +458,180 @@
       margin-bottom: 20px;
     }
 
+    /* ===== Sampling Sheet Card Styles ===== */
+    .sampling-sheet {
+      background: white;
+      border: 2px solid #333;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      page-break-inside: avoid;
+    }
+
+    .sheet-header {
+      border-bottom: 2px solid #333;
+      padding: 0;
+    }
+
+    .sheet-title-bar {
+      background: #10B981;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 6px 10px;
+      letter-spacing: 1px;
+    }
+
+    .sheet-meta-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .sheet-meta-table td {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      font-size: 12px;
+    }
+
+    .sheet-meta-table td strong {
+      color: #333;
+    }
+
+    .sheet-section {
+      border-bottom: 1px solid #999;
+    }
+
+    .sheet-section-title {
+      background: #e8f5e9;
+      color: #10B981;
+      font-weight: bold;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-bottom: 1px solid #10B981;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .sheet-data-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .sheet-data-table th {
+      background: #f5f5f5;
+      color: #444;
+      font-weight: 600;
+      font-size: 11px;
+      padding: 5px 8px;
+      border: 1px solid #ccc;
+      text-align: left;
+      width: 22%;
+    }
+
+    .sheet-data-table td {
+      padding: 5px 8px;
+      border: 1px solid #ccc;
+      font-size: 12px;
+      color: #222;
+    }
+
+    .sheet-iteration-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .sheet-iteration-table th {
+      background: #10B981;
+      color: white;
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .sheet-iteration-table td {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .sheet-actions {
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      background: #f9f9f9;
+      border-top: 1px solid #ddd;
+    }
+
+    .sheet-footer {
+      padding: 6px 10px;
+      font-size: 11px;
+      color: #666;
+      background: #fafafa;
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .reports-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Iteration table inside form */
+    .iteration-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 5px;
+    }
+    .iteration-table th {
+      background: #10B981;
+      color: white;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      font-size: 13px;
+    }
+    .iteration-table td {
+      padding: 5px 8px;
+      border: 1px solid #ccc;
+      font-size: 13px;
+    }
+    .iteration-table td input {
+      border: none;
+      padding: 4px;
+      width: 100%;
+    }
+    .section-heading {
+      margin-top: 20px;
+      color: #333;
+      border-bottom: 2px solid #10B981;
+      padding-bottom: 8px;
+      font-size: 15px;
+    }
+
     @media print {
       body {
         background: white;
+        padding: 0;
       }
-      header, .nav-buttons, .search-section, .btn-print, .btn-small {
-        display: none;
+      header, .nav-buttons, .search-section, .btn-print, .sheet-actions, .btn-small {
+        display: none !important;
       }
-      .card {
+      .sampling-sheet {
+        border: 2px solid #333;
+        margin-bottom: 15px;
         page-break-inside: avoid;
+      }
+      .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
       }
     }
 
@@ -582,9 +651,6 @@
         grid-template-columns: 1fr;
       }
       .reports-grid {
-        grid-template-columns: 1fr;
-      }
-      .card-body {
         grid-template-columns: 1fr;
       }
       .dashboard-grid {
@@ -761,15 +827,8 @@
       <span class="close" onclick="closeModal('adminPanelModal')">&times;</span>
       <h2>➕ Add New Sampling Report - VANGUARD IHL</h2>
       <form id="reportForm" onsubmit="saveReport(event)">
-        
-        <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #10B981; padding-bottom:10px;">📷 Photo Upload</h3>
-        <div class="form-group">
-          <label>📸 Upload Report Photo</label>
-          <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto()">
-          <img id="photoPreview" style="max-width:100%; margin-top:10px; display:none; border-radius:8px;">
-        </div>
 
-        <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #10B981; padding-bottom:10px;">📋 Basic Information</h3>
+        <h3 class="section-heading">📋 Basic Information</h3>
         <div class="form-row">
           <div class="form-group">
             <label>Company Name *</label>
@@ -780,23 +839,32 @@
             <input type="text" id="location" required>
           </div>
         </div>
-
         <div class="form-row">
           <div class="form-group">
             <label>Document No *</label>
             <input type="text" id="docNo" required>
           </div>
           <div class="form-group">
-            <label>Date *</label>
-            <input type="date" id="date" required>
+            <label>Annexure / Title</label>
+            <input type="text" id="annexureTitle">
           </div>
         </div>
 
-        <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #10B981; padding-bottom:10px;">🔧 Equipment & Details</h3>
+        <h3 class="section-heading">🔧 Equipment Details</h3>
         <div class="form-row">
           <div class="form-group">
-            <label>Equipment</label>
-            <input type="text" id="equipment">
+            <label>Equipment Name</label>
+            <input type="text" id="equipmentName">
+          </div>
+          <div class="form-group">
+            <label>Equipment ID</label>
+            <input type="text" id="equipmentId">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Area Name</label>
+            <input type="text" id="areaName">
           </div>
           <div class="form-group">
             <label>Room ID</label>
@@ -804,43 +872,131 @@
           </div>
         </div>
 
+        <h3 class="section-heading">🧪 Sample Details</h3>
         <div class="form-row">
           <div class="form-group">
-            <label>Sample Media</label>
+            <label>Sample Media Used</label>
             <input type="text" id="media">
           </div>
           <div class="form-group">
+            <label>Surrogated Material Used</label>
+            <input type="text" id="surrogatedMaterial">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
             <label>Batch Size</label>
-            <input type="text" id="batch">
+            <input type="text" id="batchSize">
+          </div>
+          <div class="form-group">
+            <label>Batch No</label>
+            <input type="text" id="batchNo">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>PPE and RPE Worn</label>
+            <input type="text" id="ppeRpe" placeholder="e.g., Gloves, N95, Safety glasses">
+          </div>
+          <div class="form-group">
+            <label>Sample Collection Date</label>
+            <input type="date" id="sampleCollectionDate">
           </div>
         </div>
 
-        <h3 style="margin-top:20px; color:#333; border-bottom:2px solid #10B981; padding-bottom:10px;">🌡️ Environmental Parameters</h3>
+        <h3 class="section-heading">💨 Air Sampling Details</h3>
         <div class="form-row">
+          <div class="form-group">
+            <label>Blank Sample I.D.</label>
+            <input type="text" id="blankSampleId">
+          </div>
+          <div class="form-group">
+            <label>Pump I.D.</label>
+            <input type="text" id="pumpId">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Time</label>
+            <input type="time" id="sampleTime">
+          </div>
+          <div class="form-group">
+            <label>Date *</label>
+            <input type="date" id="date" required>
+          </div>
+        </div>
+
+        <h3 class="section-heading">🔄 Iterations</h3>
+        <div style="overflow-x:auto;">
+          <table class="iteration-table">
+            <thead>
+              <tr>
+                <th>Iteration</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1st</strong></td>
+                <td><input type="time" id="iter1Start"></td>
+                <td><input type="time" id="iter1End"></td>
+                <td><input type="date" id="iter1Date"></td>
+              </tr>
+              <tr>
+                <td><strong>2nd</strong></td>
+                <td><input type="time" id="iter2Start"></td>
+                <td><input type="time" id="iter2End"></td>
+                <td><input type="date" id="iter2Date"></td>
+              </tr>
+              <tr>
+                <td><strong>3rd</strong></td>
+                <td><input type="time" id="iter3Start"></td>
+                <td><input type="time" id="iter3End"></td>
+                <td><input type="date" id="iter3Date"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="section-heading">🌡️ Environmental Parameters</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Parameter</label>
+            <input type="text" id="parameter" placeholder="e.g., Particulate Matter">
+          </div>
           <div class="form-group">
             <label>Temperature Range</label>
             <input type="text" id="tempRange" placeholder="e.g., 20-25°C">
           </div>
+        </div>
+        <div class="form-row">
           <div class="form-group">
             <label>Relative Humidity</label>
             <input type="text" id="humidity" placeholder="e.g., 45-55%">
           </div>
-        </div>
-
-        <div class="form-row">
           <div class="form-group">
             <label>ACPH</label>
             <input type="text" id="acph">
           </div>
+        </div>
+        <div class="form-row">
           <div class="form-group">
-            <label>Room Pressure (MMWC)</label>
-            <input type="text" id="roomPressure">
+            <label>Positive Room Pressure</label>
+            <input type="text" id="roomPressure" placeholder="e.g., +5 Pa">
+          </div>
+          <div class="form-group">
+            <label>Remarks</label>
+            <input type="text" id="remarks" placeholder="Any additional notes...">
           </div>
         </div>
 
-        <div class="form-group full">
-          <label>Remarks</label>
-          <textarea id="remarks" placeholder="Any additional notes..."></textarea>
+        <h3 class="section-heading">📷 Photo Upload</h3>
+        <div class="form-group">
+          <label>📸 Upload Report Photo</label>
+          <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto()">
+          <img id="photoPreview" style="max-width:100%; margin-top:10px; display:none; border-radius:8px;">
         </div>
 
         <button type="submit" class="btn-submit">💾 Save Report</button>
@@ -988,14 +1144,40 @@
       const report = {
         id: Date.now(),
         photo: photoBase64,
+        // Basic Info
         company: document.getElementById('company').value,
         location: document.getElementById('location').value,
         docNo: document.getElementById('docNo').value,
-        date: document.getElementById('date').value,
-        equipment: document.getElementById('equipment').value,
+        annexureTitle: document.getElementById('annexureTitle').value,
+        // Equipment
+        equipmentName: document.getElementById('equipmentName').value,
+        equipmentId: document.getElementById('equipmentId').value,
+        areaName: document.getElementById('areaName').value,
         room: document.getElementById('room').value,
+        // Sample Details
         media: document.getElementById('media').value,
-        batch: document.getElementById('batch').value,
+        surrogatedMaterial: document.getElementById('surrogatedMaterial').value,
+        batchSize: document.getElementById('batchSize').value,
+        batchNo: document.getElementById('batchNo').value,
+        ppeRpe: document.getElementById('ppeRpe').value,
+        sampleCollectionDate: document.getElementById('sampleCollectionDate').value,
+        // Air Sampling
+        blankSampleId: document.getElementById('blankSampleId').value,
+        pumpId: document.getElementById('pumpId').value,
+        sampleTime: document.getElementById('sampleTime').value,
+        date: document.getElementById('date').value,
+        // Iterations
+        iter1Start: document.getElementById('iter1Start').value,
+        iter1End: document.getElementById('iter1End').value,
+        iter1Date: document.getElementById('iter1Date').value,
+        iter2Start: document.getElementById('iter2Start').value,
+        iter2End: document.getElementById('iter2End').value,
+        iter2Date: document.getElementById('iter2Date').value,
+        iter3Start: document.getElementById('iter3Start').value,
+        iter3End: document.getElementById('iter3End').value,
+        iter3Date: document.getElementById('iter3Date').value,
+        // Environmental Parameters
+        parameter: document.getElementById('parameter').value,
         tempRange: document.getElementById('tempRange').value,
         humidity: document.getElementById('humidity').value,
         acph: document.getElementById('acph').value,
@@ -1011,6 +1193,7 @@
 
       alert('✅ Report saved successfully!');
       document.getElementById('reportForm').reset();
+      document.getElementById('photoPreview').style.display = 'none';
       closeModal('adminPanelModal');
       updateStats();
       showReports();
@@ -1122,8 +1305,13 @@
       const dateEnd = document.getElementById('dateFilterEnd').value;
       
       let filtered = reports.filter(r => {
-        const matchSearch = r.company.toLowerCase().includes(search) || 
-                           r.location.toLowerCase().includes(search);
+        const matchSearch = !search ||
+                           (r.company || '').toLowerCase().includes(search) || 
+                           (r.location || '').toLowerCase().includes(search) ||
+                           (r.equipmentName || '').toLowerCase().includes(search) ||
+                           (r.areaName || '').toLowerCase().includes(search) ||
+                           (r.room || '').toLowerCase().includes(search) ||
+                           (r.docNo || '').toLowerCase().includes(search);
         const matchDate = (!dateStart || r.date >= dateStart) && (!dateEnd || r.date <= dateEnd);
         return matchSearch && matchDate;
       });
@@ -1141,46 +1329,129 @@
 
       let html = '<div class="reports-grid">';
       reports.forEach(report => {
+        const v = (val) => val || '-';
         html += `
-          <div class="card">
-            ${report.photo ? `<img src="${report.photo}" class="card-photo">` : '<div style="height:250px; background:#f0f0f0; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:15px;">📷 No Photo</div>'}
-            
-            <div class="card-header">
-              <h2>${report.company}</h2>
-            </div>
-            
-            <div class="card-body">
-              <div class="field">
-                <div class="field-label">Location</div>
-                <div class="field-value">${report.location}</div>
-              </div>
-              <div class="field">
-                <div class="field-label">Document No</div>
-                <div class="field-value">${report.docNo}</div>
-              </div>
-              <div class="field">
-                <div class="field-label">Date</div>
-                <div class="field-value">${report.date}</div>
-              </div>
-              <div class="field">
-                <div class="field-label">Created By</div>
-                <div class="field-value">${report.createdBy}</div>
-              </div>
+          <div class="sampling-sheet">
+            <div class="sheet-header">
+              <div class="sheet-title-bar">VANGUARD INDUSTRIAL HYGIENE LABORATORY — SAMPLING RECORD SHEET</div>
+              <table class="sheet-meta-table">
+                <tr>
+                  <td><strong>Company:</strong> ${v(report.company)}</td>
+                  <td><strong>Location:</strong> ${v(report.location)}</td>
+                  <td><strong>Document No:</strong> ${v(report.docNo)}</td>
+                  <td><strong>Date:</strong> ${v(report.date)}</td>
+                </tr>
+                ${report.annexureTitle ? `<tr><td colspan="4"><strong>Annexure/Title:</strong> ${report.annexureTitle}</td></tr>` : ''}
+              </table>
             </div>
 
-            <table class="card-table">
-              <tr><th>Parameter</th><th>Value</th></tr>
-              <tr><td>Equipment</td><td>${report.equipment || '-'}</td></tr>
-              <tr><td>Room ID</td><td>${report.room || '-'}</td></tr>
-              <tr><td>Sample Media</td><td>${report.media || '-'}</td></tr>
-              <tr><td>Batch Size</td><td>${report.batch || '-'}</td></tr>
-              <tr><td>Temperature</td><td>${report.tempRange || '-'}</td></tr>
-              <tr><td>Humidity</td><td>${report.humidity || '-'}</td></tr>
-            </table>
+            <div class="sheet-section">
+              <div class="sheet-section-title">Equipment Details</div>
+              <table class="sheet-data-table">
+                <tr>
+                  <th>Equipment Name</th><td>${v(report.equipmentName)}</td>
+                  <th>Equipment ID</th><td>${v(report.equipmentId)}</td>
+                </tr>
+                <tr>
+                  <th>Area Name</th><td>${v(report.areaName)}</td>
+                  <th>Room ID</th><td>${v(report.room)}</td>
+                </tr>
+              </table>
+            </div>
 
-            <div class="card-actions">
+            <div class="sheet-section">
+              <div class="sheet-section-title">Sample Details</div>
+              <table class="sheet-data-table">
+                <tr>
+                  <th>Sample Media Used</th><td>${v(report.media)}</td>
+                  <th>Surrogated Material Used</th><td>${v(report.surrogatedMaterial)}</td>
+                </tr>
+                <tr>
+                  <th>Batch Size</th><td>${v(report.batchSize)}</td>
+                  <th>Batch No</th><td>${v(report.batchNo)}</td>
+                </tr>
+                <tr>
+                  <th>PPE and RPE Worn</th><td>${v(report.ppeRpe)}</td>
+                  <th>Sample Collection Date</th><td>${v(report.sampleCollectionDate)}</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="sheet-section">
+              <div class="sheet-section-title">Air Sampling Details</div>
+              <table class="sheet-data-table">
+                <tr>
+                  <th>Blank Sample I.D.</th><td>${v(report.blankSampleId)}</td>
+                  <th>Pump I.D.</th><td>${v(report.pumpId)}</td>
+                </tr>
+                <tr>
+                  <th>Time</th><td>${v(report.sampleTime)}</td>
+                  <th>Date</th><td>${v(report.date)}</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="sheet-section">
+              <div class="sheet-section-title">Iterations</div>
+              <table class="sheet-iteration-table">
+                <thead>
+                  <tr>
+                    <th>Iteration</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1st</strong></td>
+                    <td>${v(report.iter1Start)}</td>
+                    <td>${v(report.iter1End)}</td>
+                    <td>${v(report.iter1Date)}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>2nd</strong></td>
+                    <td>${v(report.iter2Start)}</td>
+                    <td>${v(report.iter2End)}</td>
+                    <td>${v(report.iter2Date)}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>3rd</strong></td>
+                    <td>${v(report.iter3Start)}</td>
+                    <td>${v(report.iter3End)}</td>
+                    <td>${v(report.iter3Date)}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="sheet-section">
+              <div class="sheet-section-title">Environmental Parameters</div>
+              <table class="sheet-data-table">
+                <tr>
+                  <th>Parameter</th><td>${v(report.parameter)}</td>
+                  <th>Temperature Range</th><td>${v(report.tempRange)}</td>
+                </tr>
+                <tr>
+                  <th>Relative Humidity</th><td>${v(report.humidity)}</td>
+                  <th>ACPH</th><td>${v(report.acph)}</td>
+                </tr>
+                <tr>
+                  <th>Positive Room Pressure</th><td colspan="3">${v(report.roomPressure)}</td>
+                </tr>
+                ${report.remarks ? `<tr><th>Remarks</th><td colspan="3">${report.remarks}</td></tr>` : ''}
+              </table>
+            </div>
+
+            ${report.photo ? `<div class="sheet-section" style="padding:10px;"><img src="${report.photo}" style="max-width:100%; border-radius:4px; border:1px solid #ccc;"></div>` : ''}
+
+            <div class="sheet-actions">
               <button class="btn-small btn-pdf" onclick="generatePDF(${report.id})">📄 PDF</button>
               ${(currentUser.role === 'admin' || currentUser.username === report.createdBy) ? `<button class="btn-small btn-delete" onclick="deleteReport(${report.id})">🗑️ Delete</button>` : ''}
+            </div>
+            <div class="sheet-footer">
+              <span>Created by: <strong>${report.createdBy}</strong></span>
+              <span>${report.createdAt}</span>
             </div>
           </div>
         `;
@@ -1209,40 +1480,162 @@
       
       if(!report) return;
 
+      const v = (val) => val || '-';
+
       const element = document.createElement('div');
       element.innerHTML = `
-        <div style="padding:20px; font-family:Arial;">
-          <h1 style="color:#10B981; text-align:center;">VANGUARD IHL - SAMPLING REPORT</h1>
-          <hr style="border:2px solid #10B981;">
-          <p><strong>Company:</strong> ${report.company}</p>
-          <p><strong>Location:</strong> ${report.location}</p>
-          <p><strong>Document No:</strong> ${report.docNo}</p>
-          <p><strong>Date:</strong> ${report.date}</p>
-          ${report.photo ? `<img src="${report.photo}" style="max-width:100%; margin:20px 0; border:2px solid #10B981; border-radius:5px;">` : ''}
-          <h2 style="color:#10B981; margin-top:20px;">Details</h2>
-          <table style="width:100%; border-collapse:collapse;">
-            <tr style="background:#10B981; color:white;"><th style="border:1px solid #ddd; padding:10px; text-align:left;">Parameter</th><th style="border:1px solid #ddd; padding:10px; text-align:left;">Value</th></tr>
-            <tr><td style="border:1px solid #ddd; padding:10px;">Equipment</td><td style="border:1px solid #ddd; padding:10px;">${report.equipment || '-'}</td></tr>
-            <tr><td style="border:1px solid #ddd; padding:10px;">Room ID</td><td style="border:1px solid #ddd; padding:10px;">${report.room || '-'}</td></tr>
-            <tr><td style="border:1px solid #ddd; padding:10px;">Sample Media</td><td style="border:1px solid #ddd; padding:10px;">${report.media || '-'}</td></tr>
-            <tr><td style="border:1px solid #ddd; padding:10px;">Batch Size</td><td style="border:1px solid #ddd; padding:10px;">${report.batch || '-'}</td></tr>
-            <tr><td style="border:1px solid #ddd; padding:10px;">Temperature Range</td><td style="border:1px solid #ddd; padding:10px;">${report.tempRange || '-'}</td></tr>
-            <tr><td style="border:1px solid #ddd; padding:10px;">Relative Humidity</td><td style="border:1px solid #ddd; padding:10px;">${report.humidity || '-'}</td></tr>
-            <tr><td style="border:1px solid #ddd; padding:10px;">ACPH</td><td style="border:1px solid #ddd; padding:10px;">${report.acph || '-'}</td></tr>
-            <tr><td style="border:1px solid #ddd; padding:10px;">Room Pressure</td><td style="border:1px solid #ddd; padding:10px;">${report.roomPressure || '-'}</td></tr>
-          </table>
-          ${report.remarks ? `<h3 style="color:#10B981; margin-top:20px;">Remarks</h3><p>${report.remarks}</p>` : ''}
-          <div style="margin-top:30px; border-top:2px solid #10B981; padding-top:15px; color:#999; font-size:12px;">
-            <p>Created by: <strong>${report.createdBy}</strong></p>
-            <p>Created at: <strong>${report.createdAt}</strong></p>
-            <p style="margin-top:15px; text-align:center; color:#10B981;"><strong>VANGUARD INDUSTRIAL HYGIENE LABORATORY</strong></p>
+        <div style="padding:15px; font-family:Arial, sans-serif; font-size:12px;">
+          <!-- Header -->
+          <div style="border:2px solid #333; margin-bottom:0;">
+            <div style="background:#10B981; color:white; text-align:center; font-weight:bold; font-size:14px; padding:6px; letter-spacing:1px;">
+              VANGUARD INDUSTRIAL HYGIENE LABORATORY — SAMPLING RECORD SHEET
+            </div>
+            <table style="width:100%; border-collapse:collapse;">
+              <tr>
+                <td style="padding:5px 8px; border:1px solid #ccc;"><strong>Company:</strong> ${v(report.company)}</td>
+                <td style="padding:5px 8px; border:1px solid #ccc;"><strong>Location:</strong> ${v(report.location)}</td>
+                <td style="padding:5px 8px; border:1px solid #ccc;"><strong>Document No:</strong> ${v(report.docNo)}</td>
+                <td style="padding:5px 8px; border:1px solid #ccc;"><strong>Date:</strong> ${v(report.date)}</td>
+              </tr>
+              ${report.annexureTitle ? `<tr><td colspan="4" style="padding:5px 8px; border:1px solid #ccc;"><strong>Annexure/Title:</strong> ${report.annexureTitle}</td></tr>` : ''}
+            </table>
+          </div>
+
+          <!-- Equipment Details -->
+          <div style="border:1px solid #333; border-top:none;">
+            <div style="background:#e8f5e9; color:#10B981; font-weight:bold; font-size:11px; padding:4px 8px; border-bottom:1px solid #10B981; text-transform:uppercase;">Equipment Details</div>
+            <table style="width:100%; border-collapse:collapse;">
+              <tr>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; width:22%; font-size:11px;">Equipment Name</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.equipmentName)}</td>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; width:22%; font-size:11px;">Equipment ID</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.equipmentId)}</td>
+              </tr>
+              <tr>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; font-size:11px;">Area Name</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.areaName)}</td>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; font-size:11px;">Room ID</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.room)}</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Sample Details -->
+          <div style="border:1px solid #333; border-top:none;">
+            <div style="background:#e8f5e9; color:#10B981; font-weight:bold; font-size:11px; padding:4px 8px; border-bottom:1px solid #10B981; text-transform:uppercase;">Sample Details</div>
+            <table style="width:100%; border-collapse:collapse;">
+              <tr>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; width:22%; font-size:11px;">Sample Media Used</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.media)}</td>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; width:22%; font-size:11px;">Surrogated Material Used</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.surrogatedMaterial)}</td>
+              </tr>
+              <tr>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; font-size:11px;">Batch Size</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.batchSize)}</td>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; font-size:11px;">Batch No</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.batchNo)}</td>
+              </tr>
+              <tr>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; font-size:11px;">PPE and RPE Worn</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.ppeRpe)}</td>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; font-size:11px;">Sample Collection Date</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.sampleCollectionDate)}</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Air Sampling -->
+          <div style="border:1px solid #333; border-top:none;">
+            <div style="background:#e8f5e9; color:#10B981; font-weight:bold; font-size:11px; padding:4px 8px; border-bottom:1px solid #10B981; text-transform:uppercase;">Air Sampling Details</div>
+            <table style="width:100%; border-collapse:collapse;">
+              <tr>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; width:22%; font-size:11px;">Blank Sample I.D.</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.blankSampleId)}</td>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; width:22%; font-size:11px;">Pump I.D.</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.pumpId)}</td>
+              </tr>
+              <tr>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; font-size:11px;">Time</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.sampleTime)}</td>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; font-size:11px;">Date</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.date)}</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Iterations -->
+          <div style="border:1px solid #333; border-top:none;">
+            <div style="background:#e8f5e9; color:#10B981; font-weight:bold; font-size:11px; padding:4px 8px; border-bottom:1px solid #10B981; text-transform:uppercase;">Iterations</div>
+            <table style="width:100%; border-collapse:collapse;">
+              <thead>
+                <tr>
+                  <th style="background:#10B981; color:white; padding:5px 10px; border:1px solid #ccc; text-align:center; font-size:11px;">Iteration</th>
+                  <th style="background:#10B981; color:white; padding:5px 10px; border:1px solid #ccc; text-align:center; font-size:11px;">Start Time</th>
+                  <th style="background:#10B981; color:white; padding:5px 10px; border:1px solid #ccc; text-align:center; font-size:11px;">End Time</th>
+                  <th style="background:#10B981; color:white; padding:5px 10px; border:1px solid #ccc; text-align:center; font-size:11px;">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:5px 10px; border:1px solid #ccc; text-align:center;"><strong>1st</strong></td>
+                  <td style="padding:5px 10px; border:1px solid #ccc; text-align:center;">${v(report.iter1Start)}</td>
+                  <td style="padding:5px 10px; border:1px solid #ccc; text-align:center;">${v(report.iter1End)}</td>
+                  <td style="padding:5px 10px; border:1px solid #ccc; text-align:center;">${v(report.iter1Date)}</td>
+                </tr>
+                <tr>
+                  <td style="padding:5px 10px; border:1px solid #ccc; text-align:center;"><strong>2nd</strong></td>
+                  <td style="padding:5px 10px; border:1px solid #ccc; text-align:center;">${v(report.iter2Start)}</td>
+                  <td style="padding:5px 10px; border:1px solid #ccc; text-align:center;">${v(report.iter2End)}</td>
+                  <td style="padding:5px 10px; border:1px solid #ccc; text-align:center;">${v(report.iter2Date)}</td>
+                </tr>
+                <tr>
+                  <td style="padding:5px 10px; border:1px solid #ccc; text-align:center;"><strong>3rd</strong></td>
+                  <td style="padding:5px 10px; border:1px solid #ccc; text-align:center;">${v(report.iter3Start)}</td>
+                  <td style="padding:5px 10px; border:1px solid #ccc; text-align:center;">${v(report.iter3End)}</td>
+                  <td style="padding:5px 10px; border:1px solid #ccc; text-align:center;">${v(report.iter3Date)}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Environmental Parameters -->
+          <div style="border:1px solid #333; border-top:none;">
+            <div style="background:#e8f5e9; color:#10B981; font-weight:bold; font-size:11px; padding:4px 8px; border-bottom:1px solid #10B981; text-transform:uppercase;">Environmental Parameters</div>
+            <table style="width:100%; border-collapse:collapse;">
+              <tr>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; width:22%; font-size:11px;">Parameter</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.parameter)}</td>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; width:22%; font-size:11px;">Temperature Range</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.tempRange)}</td>
+              </tr>
+              <tr>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; font-size:11px;">Relative Humidity</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.humidity)}</td>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; font-size:11px;">ACPH</th>
+                <td style="padding:5px 8px; border:1px solid #ccc;">${v(report.acph)}</td>
+              </tr>
+              <tr>
+                <th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; font-size:11px;">Positive Room Pressure</th>
+                <td colspan="3" style="padding:5px 8px; border:1px solid #ccc;">${v(report.roomPressure)}</td>
+              </tr>
+              ${report.remarks ? `<tr><th style="background:#f5f5f5; padding:5px 8px; border:1px solid #ccc; text-align:left; font-size:11px;">Remarks</th><td colspan="3" style="padding:5px 8px; border:1px solid #ccc;">${report.remarks}</td></tr>` : ''}
+            </table>
+          </div>
+
+          ${report.photo ? `<div style="border:1px solid #333; border-top:none; padding:10px;"><img src="${report.photo}" style="max-width:100%; border-radius:4px; border:1px solid #ccc;"></div>` : ''}
+
+          <!-- Footer -->
+          <div style="border:1px solid #333; border-top:none; padding:6px 10px; font-size:11px; color:#555; display:flex; justify-content:space-between; background:#fafafa;">
+            <span>Created by: <strong>${report.createdBy}</strong></span>
+            <span>${report.createdAt}</span>
           </div>
         </div>
       `;
 
       const opt = {
         margin: 10,
-        filename: `VANGUARD_Report_${report.docNo}.pdf`,
+        filename: `VANGUARD_Report_${report.docNo || report.id}.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
         jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
@@ -1317,11 +1710,31 @@
         return;
       }
 
-      const headers = ['Company', 'Location', 'Document No', 'Date', 'Equipment', 'Room', 'Temperature', 'Humidity', 'Created By', 'Created At'];
+      const headers = [
+        'Company', 'Location', 'Document No', 'Annexure Title',
+        'Equipment Name', 'Equipment ID', 'Area Name', 'Room ID',
+        'Sample Media Used', 'Surrogated Material Used', 'Batch Size', 'Batch No', 'PPE and RPE Worn', 'Sample Collection Date',
+        'Blank Sample ID', 'Pump ID', 'Time', 'Date',
+        '1st Iter Start', '1st Iter End', '1st Iter Date',
+        '2nd Iter Start', '2nd Iter End', '2nd Iter Date',
+        '3rd Iter Start', '3rd Iter End', '3rd Iter Date',
+        'Parameter', 'Temperature Range', 'Relative Humidity', 'ACPH', 'Positive Room Pressure',
+        'Remarks', 'Created By', 'Created At'
+      ];
       let csv = headers.join(',') + '\n';
       
       reports.forEach(r => {
-        const row = [`"${r.company}"`, `"${r.location}"`, `"${r.docNo}"`, r.date, `"${r.equipment || ''}"`, `"${r.room || ''}"`, `"${r.tempRange || ''}"`, `"${r.humidity || ''}"`, `"${r.createdBy}"`, `"${r.createdAt}"`];
+        const row = [
+          `"${r.company || ''}"`, `"${r.location || ''}"`, `"${r.docNo || ''}"`, `"${r.annexureTitle || ''}"`,
+          `"${r.equipmentName || ''}"`, `"${r.equipmentId || ''}"`, `"${r.areaName || ''}"`, `"${r.room || ''}"`,
+          `"${r.media || ''}"`, `"${r.surrogatedMaterial || ''}"`, `"${r.batchSize || ''}"`, `"${r.batchNo || ''}"`, `"${r.ppeRpe || ''}"`, `"${r.sampleCollectionDate || ''}"`,
+          `"${r.blankSampleId || ''}"`, `"${r.pumpId || ''}"`, `"${r.sampleTime || ''}"`, `"${r.date || ''}"`,
+          `"${r.iter1Start || ''}"`, `"${r.iter1End || ''}"`, `"${r.iter1Date || ''}"`,
+          `"${r.iter2Start || ''}"`, `"${r.iter2End || ''}"`, `"${r.iter2Date || ''}"`,
+          `"${r.iter3Start || ''}"`, `"${r.iter3End || ''}"`, `"${r.iter3Date || ''}"`,
+          `"${r.parameter || ''}"`, `"${r.tempRange || ''}"`, `"${r.humidity || ''}"`, `"${r.acph || ''}"`, `"${r.roomPressure || ''}"`,
+          `"${r.remarks || ''}"`, `"${r.createdBy || ''}"`, `"${r.createdAt || ''}"`
+        ];
         csv += row.join(',') + '\n';
       });
 
